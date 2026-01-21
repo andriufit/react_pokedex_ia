@@ -7,28 +7,46 @@ import { Routes, Route, Link } from 'react-router-dom';
 import Home from "./pages/home";
 import Page1 from './pages/page1';
 import Page2 from './pages/page2';
+import { Navbar, Container, Nav, NavDropdown, Form, Button, Row, Col } from 'react-bootstrap';
 
 function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-        <Link to="/">Inicio</Link >
-        <Link to="/page1">Pagina 1</Link >
-        <Link to="/page2/2">Pagina producto</Link >
+      <Navbar expand="lg" className="bg-navbar-orange">
+        <Container fluid>
+          <Navbar.Brand as={Link} to="/">
+            <img src="/img/logo.png" alt="Logo" />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto full-width pr-15">
+
+              <Form inline>
+                <Row>
+                  <Col xs="auto">
+                    <Form.Control
+                      type="text"
+                      placeholder="Buscar por nombre, tipo, etc"
+                    />
+                  </Col>
+                </Row>
+              </Form>
+
+              <Nav.Link className='ml-auto' as={Link} to="/">Inicio</Nav.Link>
+
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <div className="container-fluid">
+        <div className='row'>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </div>
       </div>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/page1" element={<Page1 />} />
-        <Route path="/page2/:param" element={<Page2 />} />
-      </Routes>
 
 
     </>
