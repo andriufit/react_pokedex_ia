@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <Navbar expand="lg" className="bg-navbar-orange">
-        <Container fluid>
+        <Container fluid={true}>
           <Navbar.Brand as={Link} to="/">
             <img src="/img/logo.png" alt="Logo" />
           </Navbar.Brand>
@@ -23,7 +23,7 @@ function App() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto full-width pr-15">
 
-              <Form inline>
+              <Form>
                 <Row>
                   <Col xs="auto">
                     <Form.Control
@@ -40,7 +40,7 @@ function App() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Container fluid className='body-content'>
+      <Container fluid={true} className='body-content'>
         <Row>
           <Col lg={2} md={12} className='filter-bar'>
             <Row>
@@ -48,7 +48,7 @@ function App() {
                   <div className='left-input-container'>
                     <h3 className='input-title'>Generación</h3>
                     <Form.Select size="lg">
-                      <option defaultChecked value={""} disabled>Generación</option>
+                      <option defaultChecked value={""} disabled={true}>Generación</option>
                       <option value={1}>Generación 1</option>
                       <option value={1}>Generación 2</option>
                       <option value={1}>Generación 3</option>
@@ -75,9 +75,6 @@ function App() {
           </Col>
         </Row>
       </Container>
-
-
-
     </>
   )
 }

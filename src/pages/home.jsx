@@ -1,25 +1,27 @@
 import { useState, useEffect } from 'react'
-import getPokemons from "../services/pokeApiSerive"
+
+import PokemonCardComponent from '../components/pokemonCardComponent/pokemonCardComponent';
+
+import {getPokemons} from "../services/pokeApiSerive"
+import { Row } from 'react-bootstrap';
 
 
 function Home() {
+    const [pokemons, setPokemons] = useState([])
 
-    const [count, setCount] = useState(0)
-
-    
     useEffect(() => {
         getPokemons().then((response) => {
-            console.log("Promesaaaaaaaaaaaaa->");
-            console.log(response);
+          setPokemons(response.results)
         });
-
-        console.log("Codigo despues de la promesa");
-    });
+    }, []);
 
     return (
         <>
-            <h1>hola page1</h1>
-
+            <Row>
+                {pokemons.map((pokemon, key) => (
+                    <PokemonCardComponent key={key} name={pokemon.name} url={pokemon.url} ></PokemonCardComponent>
+                ))}
+            </Row>
         </>
     )
 
