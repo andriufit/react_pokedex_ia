@@ -1,3 +1,225 @@
 .pokemon-card-main{
-    background-color: blue;
+    margin-bottom: 45px;
+    border-radius: 10%;
+    border: solid 5px rgb(255, 237, 47);
+    padding: 10px;
+    width: 100%;
+    max-width: 290px;
+}
+.pokemon-card-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+    padding: 5px;
+}
+h2{
+    margin-bottom: 0 !important;
+}
+.pokemon-card-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: end;
+}
+
+.pokemon-card-header h2{
+    max-width: 70%;
+    font-size: 1.5rem;
+}
+
+.pokemon-card-header-stats{
+    display: block;
+    text-align: center;
+}
+.pokemon-card-header-stats :last-child{
+    width: 100%;
+}
+
+.pokemon-card-image-container{
+    background-color: rgb(223, 217, 208);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 170px;
+    border: solid 4px rgb(255, 255, 67);
+    border-radius: 10px;
+}
+
+.pokemon-card-image-container img {
+    width: 70%;
+}
+
+.pokemon-card-description {
+    height: 150px;
+    background-color: rgb(223, 217, 208);
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding-right: 10px;
+    overflow-y: auto;
+}
+
+.pokemon-card-habilities {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+
+.pokemon-card-description-habilities {
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.grass {
+    background-color: rgb(90, 217, 90);
+}
+
+.fire {
+    background-color: rgb(255, 69, 58);
+}
+
+.water {
+    background-color: rgb(58, 167, 255);
+}
+
+.electric {
+    background-color: rgb(255, 215, 0);
+}
+
+.ice {
+    background-color: rgb(173, 216, 230);
+}
+
+.poison {
+    background-color: rgb(156, 39, 176);
+}
+
+.ground {
+    background-color: rgb(103, 87, 37);
+}
+
+.fighting {
+    background-color: rgb(255, 25, 105);
+}
+
+.bug {
+    background-color: rgb(255, 40, 198);
+}
+
+.rock {
+    background-color: gray;
+}
+
+.ghost {
+    background-color: rgb(126, 97, 131);
+}
+
+.dragon {
+    background-color: orange;
+}
+
+.psychic {
+    background-color: rgb(199, 36, 228);
+}
+
+.dark {
+    background-color: rgb(58, 58, 58);
+}
+
+.fairy {
+    background-color: rgb(255, 215, 170);
+}
+
+.normal {
+    background-color: rgb(153, 153, 153);
+}
+
+.steel {
+    background-color: rgba(77, 63, 36, 0.751);
+}
+
+.flying {
+    background-color: rgba(33, 221, 217, 0.751);
+}
+
+
+
+
+
+
+.grass> :first-child {
+    background-color: rgb(164, 230, 164);
+}
+
+.fire> :first-child {
+    background-color: rgb(255, 109, 101);
+}
+
+.water> :first-child {
+    background-color: rgb(126, 186, 255);
+}
+
+.electric> :first-child {
+    background-color: rgb(255, 234, 116);
+}
+
+.ice> :first-child {
+    background-color: rgb(210, 240, 250);
+}
+
+.poison> :first-child {
+    background-color: rgb(216, 173, 230);
+}
+
+.ground> :first-child {
+    background-color: rgb(216, 173, 156);
+}
+
+.fighting> :first-child {
+    background-color: rgb(248, 95, 148);
+}
+
+.bug> :first-child {
+    background-color: rgb(223, 45, 161);
+}
+
+.rock> :first-child {
+    background-color: rgb(153, 153, 153);
+}
+
+.ghost> :first-child {
+    background-color: rgb(97, 69, 102);
+}
+
+.dragon> :first-child {
+    background-color: rgb(255, 193, 77);
+}
+
+.psychic> :first-child {
+    background-color: rgb(216, 115, 234);
+}
+
+.dark> :first-child {
+    background-color: rgb(103, 94, 94);
+}
+
+.fairy> :first-child {
+    background-color: rgb(255, 215, 170);
+}
+
+.normal> :first-child {
+    background-color: rgb(220, 220, 220);
+}
+
+.steel> :first-child {
+    background-color: rgba(77, 63, 36, 0.483);
+}
+
+.flying> :first-child {
+    background-color: rgb(188, 255, 254);
 }

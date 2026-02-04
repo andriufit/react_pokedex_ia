@@ -16,4 +16,13 @@ function formatPokedexPosition(order){
 }
 
 
-export {formatPokedexPosition}
+function formatMovePower(power){
+    if(power == null){
+        power=0;
+    }
+    return power;
+    
+}
+
+
+export {formatPokedexPosition, formatMovePower}

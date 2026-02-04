@@ -1,9 +1,11 @@
+import "./home.css";
+
 import { useState, useEffect } from 'react'
 
-import PokemonCardComponent from '../components/pokemonCardComponent/pokemonCardComponent';
+import PokemonCardComponent from '../../components/pokemonCardComponent/pokemonCardComponent';
 
-import {getPokemons} from "../services/pokeApiSerive"
-import { Row, Pagination } from 'react-bootstrap';
+import { getPokemons } from "../../services/pokeApiSerive"
+import { Row, Pagination, Col } from 'react-bootstrap';
 
 
 function Home() {
@@ -30,7 +32,11 @@ function Home() {
         let paginationCode = (<Pagination>
             <Pagination.Prev disabled={currentPage === 1} onClick={() => setNextPage(nextPage - 1)} />
             
-            {currentPage - 3 > 0 ? (
+            {currentPage - 3 == 1 ? (
+                <>
+                <Pagination.Item onClick={() => setNextPage(1)}>1</Pagination.Item>
+                </>
+            ) : currentPage - 3 > 0 ? (
                 <>
                 <Pagination.Item onClick={() => setNextPage(1)}>1</Pagination.Item>
                 <Pagination.Ellipsis disabled />
@@ -97,7 +103,9 @@ function Home() {
                 ))}
             </Row>
             <Row>
-               {generatePagination()}
+               <Col className='d-flex justify-content-center pagination-container'>
+                {generatePagination()}
+               </Col>
             </Row>
         </>
     )
