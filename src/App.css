@@ -52,6 +52,11 @@
 }
 
 
+.language-selector{
+  max-width: 95px;
+  width: 100%;
+}
+
 
 /*******************************************/
 /*Inputs laterales y sus colores*/
@@ -72,24 +77,109 @@
   margin-bottom: 5px;
 }
 
-.input-fuego{
+.input-fire{
     color: white !important;
     background-color: red !important;
 }
 
-.input-psiquico{
+.input-psychic{
     color: white !important;
     background-color: purple !important;
 }
 
-.input-planta{
+.input-plant{
     color: white !important;
     background-color: green !important;
 }
 
-.input-agua{
+.input-water{
     color: white !important;
     background-color: blue !important;
+}
+
+.input-normal{
+    color: white !important;
+    background-color: gray !important;
+}
+
+.input-poison{
+    color: white !important;
+    background-color: purple !important;
+}
+
+.input-ground{
+    color: white !important;
+    background-color: brown !important;
+}
+
+.input-flying{
+    color: white !important;
+    background-color: skyblue !important;
+}
+
+.input-bug{
+    color: white !important;
+    background-color: green !important;
+}
+
+.input-rock{
+    color: white !important;
+    background-color: brown !important;
+}
+
+.input-ghost{
+    color: white !important;
+    background-color: purple !important;
+}
+
+.input-steel{
+    color: white !important;
+    background-color: gray !important;
+}
+
+.input-fire{
+    color: white !important;
+    background-color: red !important;
+}
+
+.input-water{
+    color: white !important;
+    background-color: blue !important;
+}
+
+.input-grass{
+    color: white !important;
+    background-color: green !important;
+}
+
+.input-electric{
+    color: white !important;
+    background-color: yellow !important;
+}
+
+.input-psychic{
+    color: white !important;
+    background-color: purple !important;
+}
+
+.input-ice{
+    color: white !important;
+    background-color: blue !important;
+}
+
+.input-dragon{
+    color: white !important;
+    background-color: purple !important;
+}
+
+.input-dark{
+    color: white !important;
+    background-color: black !important;
+}
+
+.input-fairy{
+    color: white !important;
+    background-color: pink !important;
 }
 
 /***/

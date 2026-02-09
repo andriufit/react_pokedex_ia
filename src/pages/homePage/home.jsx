@@ -8,16 +8,26 @@ import { getPokemons } from "../../services/pokeApiSerive"
 import { Row, Pagination, Col } from 'react-bootstrap';
 
 
-function Home() {
-    
-    const pokemonPerPage = 9;
+function Home({filterType}) {
 
+    const originalPokemonPerPage = 9;
+
+    const [pokemonPerPage, setPokemonPerPage] = useState(originalPokemonPerPage);
+    
     const [nextPage, setNextPage] = useState(1);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPokemons, setTotalPokemons] = useState(0);
     const [pokemons, setPokemons] = useState([]);
 
     const getPokemonPage = (page) => {
+        
+        if(filterType === ""){
+            page = 1;
+            setPokemonPerPage(10000);
+        } else {
+            setPokemonPerPage(originalPokemonPerPage);
+        }
+
         getPokemons(page, pokemonPerPage).then((response) => {
             setPokemons(response.results);
             setTotalPokemons(response.count);
@@ -26,6 +36,10 @@ function Home() {
     }
 
     const generatePagination = () => {
+
+        if(filterType !== ""){
+            return;
+        }
 
         let maxPage = Math.ceil(totalPokemons / pokemonPerPage);
         
@@ -92,14 +106,15 @@ function Home() {
     }
 
     useEffect(() => {
+
         getPokemonPage(nextPage);
-    }, [nextPage]);
+    }, [nextPage, filterType]);
 
     return (
         <>
             <Row>
                 {pokemons.map((pokemon, key) => (
-                    <PokemonCardComponent key={key} name={pokemon.name} url={pokemon.url} ></PokemonCardComponent>
+                    <PokemonCardComponent key={key} name={pokemon.name} url={pokemon.url} filterType={filterType} ></PokemonCardComponent>
                 ))}
             </Row>
             <Row>

@@ -3,9 +3,10 @@ import { Col } from "react-bootstrap"
 import {getPokemonDetails, getMoveDetails} from "../../services/pokeApiSerive"
 import {formatPokedexPosition, formatMovePower} from "../../services/helperService"
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
-function PokemonCardComponent({name, url}){
-
+function PokemonCardComponent({name, url, filterType}){
+    const { t } = useTranslation();
     const [hp, setHp] = useState(0);
     const [pokedexPosition, setPokedexPosition] = useState("");
     const [urlImage, setUrlImage] = useState("");
@@ -25,6 +26,9 @@ function PokemonCardComponent({name, url}){
         })
     })
     
+    if(filterType !== "" && type !== "" && type !== filterType){
+        return null;
+    }
 
     return (
         <>
@@ -36,7 +40,7 @@ function PokemonCardComponent({name, url}){
                                 <h2>{name}</h2>
                             </div>
                             <div className="pokemon-card-header-stats">
-                                <label className="life-stat">HP{hp}</label>
+                                <label className="life-stat">{t("hp")}{hp}</label>
                                 <label className="pokedex-position">#{pokedexPosition}</label>
                             </div>
                         </div>
@@ -46,7 +50,7 @@ function PokemonCardComponent({name, url}){
                         <div className="pokemon-card-description">
                             <div className="pokemon-card-habilities">
                                 <div>{habilities}</div>
-                                <div>{damageHabilities} DMG</div>
+                                <div>{damageHabilities} {t("dmg")}</div>
                             </div>
                             <hr />
                             <div className="pokemon-card-description-habilities">
